@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Building2, Globe, MonitorDot, ArrowRight } from "lucide-react";
 import { PageHeader, Card } from "@/components/shared";
-import { listOrganizations } from "@/app/(internal)/admin/_actions/organizations";
-import { listSites } from "@/app/(internal)/admin/_actions/sites";
-import { listDomains } from "@/app/(internal)/admin/_actions/domains";
+import { listOrganizations } from "@/app/(app)/(internal)/admin/_actions/organizations";
+import { listSites } from "@/app/(app)/(internal)/admin/_actions/sites";
+import { listDomains } from "@/app/(app)/(internal)/admin/_actions/domains";
 
 export default async function AdminDashboardPage() {
   const [orgsResult, sitesResult, domainsResult] = await Promise.all([

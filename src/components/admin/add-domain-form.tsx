@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button, Input } from "@/components/shared";
-import { createDomain } from "@/app/(internal)/admin/_actions/domains";
+import { createDomain } from "@/app/(app)/(internal)/admin/_actions/domains";
 
 interface AddDomainFormProps {
   siteId: string;

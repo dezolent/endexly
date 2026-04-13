@@ -3,7 +3,7 @@
 import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Input, Select } from "@/components/shared";
-import { createSite } from "@/app/(internal)/admin/_actions/sites";
+import { createSite } from "@/app/(app)/(internal)/admin/_actions/sites";
 import { slugify } from "@/lib/utils";
 
 interface Organization {

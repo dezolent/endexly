@@ -34,11 +34,19 @@ export default buildConfig({
   // ── Database ──────────────────────────────────────────────────────────────
   // Use the direct (non-pgbouncer) URL so Payload can run migrations
   // and use prepared statements without pgbouncer transaction-mode issues.
+  //
+  // schemaName: "payload" places ALL Payload-managed tables inside the
+  // PostgreSQL "payload" schema (e.g. payload.pages, payload.users) instead
+  // of the default "public" schema. This fully isolates Payload from the
+  // control-plane tables (organizations, sites, domains, etc.) that live in
+  // "public" and are managed by Drizzle. Payload will never see or touch
+  // those tables again.
   db: postgresAdapter({
     pool: {
       connectionString:
         process.env.DIRECT_DATABASE_URL || process.env.DATABASE_URL || "",
     },
+    schemaName: "payload",
   }),
 
   // ── Rich text editor ──────────────────────────────────────────────────────

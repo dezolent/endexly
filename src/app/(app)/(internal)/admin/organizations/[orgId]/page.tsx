@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronLeft, Plus } from "lucide-react";
-import { getOrganization } from "@/app/(internal)/admin/_actions/organizations";
-import { listSites } from "@/app/(internal)/admin/_actions/sites";
+import { getOrganization } from "@/app/(app)/(internal)/admin/_actions/organizations";
+import { listSites } from "@/app/(app)/(internal)/admin/_actions/sites";
 import { Badge, Button, Card, DataTable, PageHeader } from "@/components/shared";
 import type { Column } from "@/components/shared";
 import { formatDate, buildSlugUrl, buildTenantUrl } from "@/lib/utils";

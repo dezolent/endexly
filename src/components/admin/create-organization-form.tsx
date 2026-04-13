@@ -2,7 +2,7 @@
 
 import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { createOrganization } from "@/app/(internal)/admin/_actions/organizations";
+import { createOrganization } from "@/app/(app)/(internal)/admin/_actions/organizations";
 import { Button, Input } from "@/components/shared";
 import { slugify } from "@/lib/utils";
 

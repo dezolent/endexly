@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { listSites } from "@/app/(internal)/admin/_actions/sites";
+import { listSites } from "@/app/(app)/(internal)/admin/_actions/sites";
 import { Badge, DataTable, PageHeader } from "@/components/shared";
 import type { Column } from "@/components/shared";
 import { formatDate, buildTenantUrl } from "@/lib/utils";

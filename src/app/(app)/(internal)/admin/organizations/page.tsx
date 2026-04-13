@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
-import { listOrganizations } from "@/app/(internal)/admin/_actions/organizations";
+import { listOrganizations } from "@/app/(app)/(internal)/admin/_actions/organizations";
 import { Badge, Button, DataTable, PageHeader } from "@/components/shared";
 import type { Column } from "@/components/shared";
 import { formatDate, buildSlugUrl } from "@/lib/utils";

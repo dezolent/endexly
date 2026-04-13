@@ -3,16 +3,16 @@ import { notFound } from "next/navigation";
 import { buildTenantUrl } from "@/lib/utils";
 import {
   getSite,
-} from "@/app/(internal)/admin/_actions/sites";
+} from "@/app/(app)/(internal)/admin/_actions/sites";
 import {
   listDomains,
-} from "@/app/(internal)/admin/_actions/domains";
+} from "@/app/(app)/(internal)/admin/_actions/domains";
 import {
   listEnvironments,
-} from "@/app/(internal)/admin/_actions/environments";
+} from "@/app/(app)/(internal)/admin/_actions/environments";
 import {
   getSiteSettings,
-} from "@/app/(internal)/admin/_actions/site-settings";
+} from "@/app/(app)/(internal)/admin/_actions/site-settings";
 import {
   Badge,
   Card,

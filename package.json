@@ -13,7 +13,7 @@
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx src/lib/db/seed.ts",
     "payload:seed": "tsx src/lib/payload/seed.ts",
-    "payload:types": "payload generate:types"
+    "payload:types": "node --import tsx/esm node_modules/.bin/payload generate:types"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.0.12",
@@ -41,6 +41,7 @@
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "sass": "^1.99.0",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"

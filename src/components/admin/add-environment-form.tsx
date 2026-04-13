@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button, Select } from "@/components/shared";
-import { createEnvironment } from "@/app/(internal)/admin/_actions/environments";
+import { createEnvironment } from "@/app/(app)/(internal)/admin/_actions/environments";
 
 interface AddEnvironmentFormProps {
   siteId: string;

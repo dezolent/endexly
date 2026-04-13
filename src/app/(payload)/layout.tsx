@@ -1,20 +1,29 @@
-// Minimal root layout for the Payload CMS admin.
-// Payload renders its own full-page UI — no global providers or nav here.
+import { RootLayout, handleServerFunctions } from "@payloadcms/next/layouts";
+import config from "@payload-config";
+import { importMap } from "./cms/importMap.js";
 import React from "react";
+import "@payloadcms/ui/scss/app.scss";
 
-export const metadata = {
-  title: "Endexly CMS",
-  description: "Content management for Endexly tenant sites.",
+type Args = {
+  children: React.ReactNode;
 };
 
-export default function PayloadRootLayout({
-  children,
-}: {
-  children: React.ReactNode;
+const serverFunction = async function (args: {
+  name: string;
+  args: Record<string, unknown>;
 }) {
+  "use server";
+  return handleServerFunctions({
+    ...args,
+    config,
+    importMap,
+  });
+};
+
+export default async function PayloadRootLayout({ children }: Args) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <RootLayout config={config} importMap={importMap} serverFunction={serverFunction}>
+      {children}
+    </RootLayout>
   );
 }

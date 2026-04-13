@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { listDomains } from "@/app/(internal)/admin/_actions/domains";
+import { listDomains } from "@/app/(app)/(internal)/admin/_actions/domains";
 import { Badge, DataTable, PageHeader } from "@/components/shared";
 import type { Column } from "@/components/shared";
 import { formatDate } from "@/lib/utils";

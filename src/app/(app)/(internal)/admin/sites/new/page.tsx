@@ -1,4 +1,4 @@
-import { listOrganizations } from "@/app/(internal)/admin/_actions/organizations";
+import { listOrganizations } from "@/app/(app)/(internal)/admin/_actions/organizations";
 import { Card, PageHeader } from "@/components/shared";
 import { CreateSiteForm } from "@/components/admin/create-site-form";
 

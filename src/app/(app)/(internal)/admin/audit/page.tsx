@@ -1,4 +1,4 @@
-import { listAuditEvents } from "@/app/(internal)/admin/_actions/audit";
+import { listAuditEvents } from "@/app/(app)/(internal)/admin/_actions/audit";
 import { DataTable, PageHeader } from "@/components/shared";
 import type { Column } from "@/components/shared";
 import { formatDate } from "@/lib/utils";

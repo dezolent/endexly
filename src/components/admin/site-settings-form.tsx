@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button, Input } from "@/components/shared";
-import { updateSiteSettings } from "@/app/(internal)/admin/_actions/site-settings";
+import { updateSiteSettings } from "@/app/(app)/(internal)/admin/_actions/site-settings";
 import { cn } from "@/lib/utils";
 
 interface SiteSettingsData {
