@@ -11,6 +11,18 @@ import { ContactCTABlock } from "../blocks/contact-cta";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
+  hooks: {
+    // Normalize slug to always have a leading slash so URL routing is predictable.
+    // "/" stays as-is; "about" becomes "/about"; "/about" is unchanged.
+    beforeChange: [
+      ({ data }) => {
+        if (typeof data.slug === "string" && data.slug !== "/") {
+          data.slug = data.slug.startsWith("/") ? data.slug : `/${data.slug}`;
+        }
+        return data;
+      },
+    ],
+  },
   admin: {
     useAsTitle: "title",
     description: "Content pages for tenant sites, built with the block editor.",

@@ -24,9 +24,19 @@ export async function getPageBySlug(
 ) {
   const payload = await getPayload({ config });
 
+  // Match slugs stored with OR without a leading slash.
+  // CMS users may save "/about" or "about" — both must resolve from URL param "about".
+  // The homepage is always stored as "/" and queried as "/" directly.
+  const withSlash = slug.startsWith("/") ? slug : `/${slug}`;
+  const withoutSlash = slug.startsWith("/") ? slug.slice(1) : slug;
+  const slugCondition: Where =
+    slug === "/"
+      ? { slug: { equals: "/" } }
+      : { or: [{ slug: { equals: withSlash } }, { slug: { equals: withoutSlash } }] };
+
   const conditions: Where[] = [
     { siteId: { equals: siteId } },
-    { slug: { equals: slug } },
+    slugCondition,
   ];
   if (!draft) {
     conditions.push({ status: { equals: "published" } });
